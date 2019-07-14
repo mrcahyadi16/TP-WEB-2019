@@ -2,7 +2,6 @@
 
 $konek = mysqli_connect("localhost", "root", "", "todo");
 
-
 function query($query)
 {
   global $konek;
@@ -14,7 +13,6 @@ function query($query)
 
   return $rows;
 }
-
 
 function newlist($data)
 {
@@ -80,8 +78,6 @@ function simpan($data)
   mysqli_query($konek, $query);
   return mysqli_affected_rows($konek);
 }
-
-
 
 function updates($data)
 {

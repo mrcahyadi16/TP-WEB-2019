@@ -9,12 +9,12 @@ if (isset($_POST["kirim"])) {
   // cek apakah data berhasil ditambahkan atau tidak
   if (updates($_POST) > 0) {
     echo "<script>
-           alert('Data BERHASIL ditambahkan !!!');
+           alert('Data BERHASIL Di Ubah !!!');
             document.location.href = 'dash.php';
           </script>";
   } else {
     echo "<script>
-             alert('Data GAGAL ditambahkan');
+             alert('Data GAGAL Di Ubah');
           </script>";
   }
 }
