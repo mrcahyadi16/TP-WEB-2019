@@ -10,12 +10,12 @@ if (isset($_POST["save"])) {
   // cek apakah data berhasil ditambahkan atau tidak
   if (newlist($_POST) > 0) {
     echo "<script>
-           alert('Data BERHASIL diDimpan !!!');
+           alert('Data BERHASIL di Dimpan !!!');
             document.location.href = 'dash.php';
           </script>";
   } else {
     echo "<script>
-             alert('Data GAGAL diSimpan');
+             alert('Data GAGAL di Simpan');
           </script>";
   }
 }
@@ -57,24 +57,23 @@ if (isset($_POST["save"])) {
       <div class="container">
         <div class="container">
           <h1 class="text-center ubuntu"><b>Add New List</b> </h2> <br>
-            <form action="" method="post">
-              <div class="form-group">
+            <form action="" method="post" name="valid" onSubmit="return validasi()">
+              <div class=" form-group">
                 <label for="list">List Name</label>
-                <input type="text" class="form-control" id="list" placeholder="List Name" name="list_name" required>
+                <input type="text" class="form-control" id="list" placeholder="List Name" name="list_name" autocomplete="off">
               </div>
               <div class="form-group">
                 <label for="text">Deskripsi</label>
-                <input type="text" name="note" placeholder="Deskripsi" class="form-control">
+                <input type="text" name="note" placeholder="Deskripsi" class="form-control" autocomplete="off">
               </div>
               <div class="form-group">
                 <label for="jam">Time</label>
-                <input type="time" class="form-control" id="jam" name="jam" required>
+                <input type="time" class="form-control" id="jam" name="jam">
               </div>
               <div class="form-group">
                 <label for="tgl">Date</label>
-                <input type="date" min="<?php echo $hari; ?>" class="form-control" id="tgl datepicker" name="tgl" required>
+                <input type="date" min="<?php echo $hari; ?>" class="form-control" id="tgl" name="tgl">
               </div>
-              <input type="file" name="file" id="file" class="btn btn-primary">
               <button type="submit" class="btn btn-primary mr-2" name="save">Save</button>
               <button type="reset" class="btn btn-danger">Reset</button>
             </form>
@@ -84,15 +83,37 @@ if (isset($_POST["save"])) {
     <!-- Akhir MAin -->
   </div>
   <!-- Akhir SideBAr -->
+
+  <script>
+    function validasi() {
+      var x = document.forms["valid"]["list_name"].value;
+      if (x == null || x == "") {
+        alert("List Name Tidak Boleh Kosong");
+        return false;
+      }
+      var x = document.forms["valid"]["note"].value;
+      if (x == null || x == "") {
+        alert("Deskripsi Tidak Boleh Kosong");
+        return false;
+      }
+      var x = document.forms["valid"]["jam"].value;
+      if (x == null || x == "") {
+        alert("Time Wajib Diisi");
+        return false;
+      }
+      var x = document.forms["valid"]["tgl"].value;
+      if (x == null || x == "") {
+        alert("Date Wajib Diisi");
+        return false;
+      }
+    }
+  </script>
+
   <!-- Script Boostrap -->
   <script src="bootsrap/js/jquery-3.3.1.slim.min.js"></script>
   <script src="bootsrap/js/bootstrap.min.js"></script>
   <script src="bootsrap/js/popper.min.js"></script>
   <script src="bootsrap/bootstrap-datepicker.js"></script>
-
-  <script>
-    $('.datepicker').datepicker();
-  </script>
 </body>
 
 </html>

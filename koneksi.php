@@ -20,7 +20,6 @@ function newlist($data)
 {
   global $konek;
   // ambil data dari setiap elemen dalam form
-  // $id = htmlspecialchars($data["id"]);
   $list_name = htmlspecialchars($data["list_name"]);
   $note = htmlspecialchars($data["note"]);
   $jam = htmlspecialchars($data["jam"]);
@@ -57,7 +56,6 @@ function ubah($data)
   $query = "UPDATE list SET
                 list_name = '$list_name',
                 note = '$note',
-               
                 tgl = '$tgl'
             WHERE id = $id
             ";
@@ -77,6 +75,28 @@ function simpan($data)
   $query = "UPDATE list SET
             proses = '$proses'
             WHERE id = '$id'
+            ";
+
+  mysqli_query($konek, $query);
+  return mysqli_affected_rows($konek);
+}
+
+
+
+function updates($data)
+{
+  global $konek;
+  // ambil data dari tiap elemen dalam form
+  $id = ($data["id"]);
+  // $list_name = htmlspecialchars($data["list_name"]);
+  // $note = htmlspecialchars($data["note"]);
+  // $jam = $data["jam"];
+  $proses = $data["proses"];
+
+  // query update data
+  $query = "UPDATE list SET
+                proses = '$proses'
+            WHERE id = $id
             ";
 
   mysqli_query($konek, $query);
