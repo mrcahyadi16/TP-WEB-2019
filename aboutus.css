@@ -1,0 +1,78 @@
+body {
+   background-color: #d9d9d9;
+   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.atas {
+   margin-top: 80px;
+}
+
+hr {
+   width: 240px;
+   border-top: 3px solid black;
+}
+
+img {
+   width: 50%;
+}
+
+.icon {
+   padding-right: 15px;
+}
+
+.fa-instagram {
+   color: #A73A97;
+}
+
+.fa-github {
+   color: black;
+}
+
+.fa-github:hover {
+   color: rgba(0, 0, 0, 0.7);
+}
+
+.team {
+   font-family: 'Righteous', cursive;
+}
+
+h3,
+h4 {
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* Versi Desktop */
+@media (min-width: 992px) {
+   .nav-item {
+      margin-right: 25px;
+      color: white;
+   }
+
+   .nav-item,
+   .navbar-brand,
+   .nav-link {
+      color: rgb(0, 0, 0) !important;
+   }
+
+   .nav-link:hover::after {
+      content: '';
+      display: block;
+      border-bottom: 3px solid rgb(183, 183, 196);
+      margin-bottom: -3px;
+   }
+
+   hr {
+      width: 240px;
+      border-top: 3px solid black;
+   }
+
+   .team {
+      font-family: 'Righteous', cursive;
+   }
+
+   .text-white {
+      color: white !important;
+   }
+
+}

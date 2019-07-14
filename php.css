@@ -1,0 +1,18 @@
+.tengah {
+  text-align: center !important;
+}
+
+body,
+.font {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+
+.ring {
+  font-family: 'Righteous', cursive;
+}
+
+.logo {
+  width: 50px !important;
+  height: 50px !important;
+}
